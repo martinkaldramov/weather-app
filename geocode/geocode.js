@@ -1,6 +1,6 @@
 const request = require('request');
 
-function geocodeAddress(address){
+var geocodeAddress = (address) => {
 	const encodedAddress = decodeURIComponent(address);
 	 
 	request({
@@ -17,8 +17,6 @@ function geocodeAddress(address){
 				console.log(`The LNG is: ${body.results[0].geometry.location.lng}`);
 			}
 		});
-}
+};
 
-module.exports = {
-	geocodeAddress
-}
+module.exports.geocodeAddress = geocodeAddress;
