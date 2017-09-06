@@ -31,5 +31,12 @@ request({
     json: true
   }, 
   (error, response, body) => {
-    console.log(body);
+    if(error){
+      console.log('Unable to connect to the Dark Sky server.');
+    }else if(body.code === 400){
+      console.log('Bad Request');  
+    }else{
+      console.log(Math.ceil((body.currently.temperature - 32) * .5556));
+    }
 });
+
