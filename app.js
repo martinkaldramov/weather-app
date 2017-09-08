@@ -26,11 +26,11 @@ const argv = yargs
 // }); 
 //
 
-weather.getWeather(42.6977082, 23.3218675, (errorMessage, results) => {
+weather.getWeather(42.6977082, 23.3218675, (errorMessage, weatherResults) => {
   if(errorMessage){
     console.log(errorMessage);  
   }else{
-    console.log(JSON.stringify(results, undefined, 2));
+    console.log(JSON.stringify(weatherResults, undefined, 2));
   }
 });
 

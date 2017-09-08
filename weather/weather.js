@@ -12,7 +12,9 @@ var getWeather = (lat, lng, callback) => {
       }else if(body.code === 400){
         callback('Bad Request');  
       }else{
-        console.log('The temperature in Sofia now is: ' + Math.ceil((body.currently.temperature - 32) * .5556) + ' C');
+        callback(undefined, {
+          currentTemperature: body.currently.temperature  
+        });
       }
   });
 }
