@@ -13,7 +13,8 @@ var getWeather = (lat, lng, callback) => {
         callback('Bad Request');  
       }else{
         callback(undefined, {
-          currentTemperature: body.currently.temperature  
+          temperature: body.currently.temperature,
+          apparentTemperature: body.currently.apparentTemperature
         });
       }
   });
